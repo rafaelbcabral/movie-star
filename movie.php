@@ -41,6 +41,7 @@ if (!empty($userData)) {
 }
 
 // resgatar as reviews do filme
+$alreadyReviewed = false;
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -63,37 +64,39 @@ if (!empty($userData)) {
     <div class="offset-md-1 col-md-10" id="reviews-container">
       <h3 id="reviewstitle">Avaliacoes: </h3>
       <!--review -->
-      <div class="col-md-12">
-        <h4>Envie sua Avaliacao:</h4>
-        <p class="page-description">Preencha o formulario com a nota e comentario sobre o filme</p>
-        <form action="<?= $BASE_URL ?>review_process.php" id="review-form" method="post">
-          <input type="hidden" name="type" value="create">
-          <input type="hidden" name="movies_id" value="<?= $movie->id ?>">
-          <div class="form-group">
-            <label for="rating">Nota do filme:</label>
-            <select name="rating" id="rating" class="form-control">
-              <option value="">Selecione</option>
-              <option value="10">10</option>
-              <option value="9">9</option>
-              <option value="8">8</option>
-              <option value="7">7</option>
-              <option value="6">6</option>
-              <option value="5">5</option>
-              <option value="4">4</option>
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-              <option value="0">0</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="review">Seu comentário: </label>
-            <textarea name="review" id="review" rows="3" class="form-control" placeholder="O que voce achou 
+      <?php if (!empty($userData) && !$userOwnsMovie && !$alreadyReviewed) : ?>
+        <div class="col-md-12" id="review-form-container">
+          <h4>Envie sua Avaliacao:</h4>
+          <p class="page-description">Preencha o formulario com a nota e comentario sobre o filme</p>
+          <form action="<?= $BASE_URL ?>review_process.php" id="review-form" method="post">
+            <input type="hidden" name="type" value="create">
+            <input type="hidden" name="movies_id" value="<?= $movie->id ?>">
+            <div class="form-group">
+              <label for="rating">Nota do filme:</label>
+              <select name="rating" id="rating" class="form-control">
+                <option value="">Selecione</option>
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+                <option value="0">0</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="review">Seu comentário: </label>
+              <textarea name="review" id="review" rows="3" class="form-control" placeholder="O que voce achou 
             do filme?"></textarea>
-          </div>
-          <input type="submit" class="btn form-btn" value="Enviar comentário">
-        </form>
-      </div>
+            </div>
+            <input type="submit" class="btn form-btn" value="Enviar comentário">
+          </form>
+        </div>
+      <?php endif; ?>
       <!-- coments -->
       <div class="col-md-12 review">
         <div class="row">

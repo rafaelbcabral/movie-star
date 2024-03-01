@@ -67,6 +67,31 @@ if ($type == "create") {
   } else {
     $message->setMessage("Voce precisa adicionar pelo menos: Título, descricao e categoria!", "error", "back");
   }
+} else if ($type == "delete") {
+
+    // Recebe os dados do form
+    $id = filter_input(INPUT_POST, "id");
+
+    $movie = $movieDao->findById($id);
+
+    if($movie) {
+
+      // Verificar se o filme é do usuário
+      if($movie->users_id === $userData->id) {
+
+        $movieDao->destroy($movie->id);
+
+      } else {
+
+        $message->setMessage("Este filme nao lhe pertence!", "error", "index.php");
+
+      }
+
+    } else {
+
+      $message->setMessage("Informações inválidas!", "error", "index.php");
+
+    }
 } else {
   $message->setMessage("Informacoes inválidas!", "error", "index.php");
 }
