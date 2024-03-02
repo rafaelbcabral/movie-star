@@ -156,7 +156,7 @@ if ($type == "create") {
     $message->setMessage("Informações inválidas!", "error", "index.php");
 
   }
-  
+}
 }else {
   $message->setMessage("Informacoes inválidas!", "error", "index.php");
 }
