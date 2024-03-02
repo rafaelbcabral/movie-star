@@ -4,7 +4,7 @@ require_once("templates/header.php");
 // verify user authentic
 require_once("dao/MovieDAO.php");
 require_once("models/Movie.php");
-require_once("dao/ReviewDAO.php")
+require_once("dao/ReviewDAO.php");
 
 
 $id = filter_input(INPUT_GET, "id");
@@ -39,12 +39,13 @@ if (!empty($userData)) {
   if ($userData->id = $movie->users_id) {
     $userOwnsMovie = true;
   }
+
+  // resgatar as reviews do filme
+$alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
 }
 
 $movieReviews = $reviewDao->getMoviesReview($id);
 
-// resgatar as reviews do filme
-$alreadyReviewed = false;
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -56,7 +57,7 @@ $alreadyReviewed = false;
         <span class="pipe"></span>
         <span><?= $movie->category ?></span>
         <span class="pipe"></span>
-        <span><i class="fas fa-star"></i> 9</span>
+        <span><i class="fas fa-star"></i><?= $movie->rating ?></span>
       </p>
       <iframe src="<?= $movie->trailer ?>" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p><?= $movie->description ?></p>
