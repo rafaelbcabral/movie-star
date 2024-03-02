@@ -11,7 +11,7 @@ $userDao = new UserDAO($conn, $BASE_URL);
 $movieDao = new MovieDAO($conn, $BASE_URL);
 
 // receber id 
-$id = filter_input(INPUT_GET, "id")
+$id = filter_input(INPUT_GET, "id");
 
 if(empty($id)){
   if(!empty($userData)){
