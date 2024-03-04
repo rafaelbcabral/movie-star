@@ -205,11 +205,12 @@
 }
 
 /* Edit Profile */
+
 #profile-image-container,
 .profile-image-container {
   width: 150px;
   height: 150px;
-  border: 6px solid #ff0000;
+  border: 3px solid #ff0000 !important;
   border-radius: 100%;
   background-size: cover;
   background-position: center;
@@ -251,6 +252,7 @@
 
 .profile-container .profile-image {
   margin: 20px auto;
+
 }
 
 .about-title {
