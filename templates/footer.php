@@ -15,7 +15,7 @@
   <div id="footer-links-container">
     <ul>
       <li><a href="<?php $BASE_URL ?>newmovie.php">Adicionar filme</a></li>
-      <li><a href="#">Adicionar crítica</a></li>
+      <li><a href="#">Voltar ao início</a>
       <li><a href="<?php $BASE_URL ?>auth.php">Entrar / Registrar-se</a></li>
     </ul>
   </div>

@@ -223,14 +223,28 @@
 
     public function destroy($id) {
 
-      $stmt = $this->conn->prepare("DELETE FROM movies WHERE id = :id");
-
-      $stmt->bindParam(":id", $id);
-
-      $stmt->execute();
-
-      // Mensagem de sucesso por remover filme
-      $this->message->setMessage("Filme removido com sucesso!", "success", "dashboard.php");
+          // 1. Consulte a tabela de avaliações para obter todas as avaliações associadas ao filme
+          $stmt = $this->conn->prepare("SELECT id FROM reviews WHERE movies_id = :movie_id");
+          $stmt->bindParam(":movie_id", $id);
+          $stmt->execute();
+          
+          $reviews = $stmt->fetchAll(PDO::FETCH_COLUMN);
+      
+          // 2. Exclua as avaliações encontradas
+          foreach ($reviews as $reviewId) {
+              $stmt = $this->conn->prepare("DELETE FROM reviews WHERE id = :review_id");
+              $stmt->bindParam(":review_id", $reviewId);
+              $stmt->execute();
+          }
+      
+          // 3. Exclua o filme da tabela de filmes
+          $stmt = $this->conn->prepare("DELETE FROM movies WHERE id = :id");
+          $stmt->bindParam(":id", $id);
+          $stmt->execute();
+      
+          // Mensagem de sucesso por remover filme
+          $this->message->setMessage("Filme removido com sucesso!", "success", "dashboard.php");
+      
 
     }
 

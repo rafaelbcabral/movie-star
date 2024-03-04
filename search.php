@@ -22,7 +22,7 @@ $movies = $movieDao->findByTitle($q);
       <?php require("templates/movie_card.php"); ?>
     <?php endforeach; ?>
     <?php if (count($movies) === 0) : ?>
-      <p class="empty-list"> Não há filmes para esta busca, <a href="<?php $_BASE_URL ?>">Voltar</a>.</p>
+      <p class="empty-list"> Não há filmes para esta busca, <a href="<?php $_BASE_URL ?>index.php">Voltar</a>.</p>
     <?php endif; ?>
   </div>
 </div>
