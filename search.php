@@ -21,7 +21,7 @@ $movies = $movieDao->findByTitle($q);
     <?php foreach ($movies as $movie) : ?>
       <?php require("templates/movie_card.php"); ?>
     <?php endforeach; ?>
-    <?php if (count($latestMovies) === 0) : ?>
+    <?php if (count($movies) === 0) : ?>
       <p class="empty-list"> Não há filmes para esta busca, <a href="<?php $_BASE_URL ?>">Voltar</a>.</p>
     <?php endif; ?>
   </div>

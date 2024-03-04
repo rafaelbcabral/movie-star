@@ -10,7 +10,7 @@ class Movie
   public $image;
   public $trailer;
   public $category;
-  public $lenght;
+  public $length;
   public $users_id;
 
   public function imageGenerateName()

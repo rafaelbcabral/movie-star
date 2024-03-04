@@ -209,9 +209,10 @@
 .profile-image-container {
   width: 150px;
   height: 150px;
-  border: 6px solid rgb(0, 255, 42);
+  border: 6px solid #842029;
   border-radius: 100%;
   background-size: cover;
+  background-position: center;
   margin: 15px auto;
 }
 
@@ -229,7 +230,7 @@
 }
 
 .form-control.disabled {
-  background-color: #bbb;
+  background-color: #BBB;
 }
 
 #change-password-container {
@@ -253,7 +254,7 @@
 }
 
 .about-title {
-  color: #ccc;
+  color: #CCC;
 }
 
 .profile-description {
@@ -269,7 +270,7 @@
 .about-container {
   text-align: center;
   background-color: #333;
-  border-bottom: 3px solid #ccc;
+  border-bottom: 3px solid #CCC;
 }
 
 .added-movies-container {
@@ -283,6 +284,7 @@
 .added-movies-container .movie-card {
   width: 31%;
 }
+
 
 /* New movie */
 
@@ -492,7 +494,7 @@
 }
 
 /* mobile */
-@media(max-width: 450px) {
+@media(max-width: 480px) {
 
   #main-container {
     padding: 20px;

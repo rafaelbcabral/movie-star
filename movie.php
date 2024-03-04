@@ -53,7 +53,7 @@ $movieReviews = $reviewDao->getMoviesReview($id);
     <div class="offset-md-1 col-md-6 movie-container">
       <h1 class="page-title"><?= $movie->title ?></h1>
       <p class="movie-details">
-        <span>Duracao: <?= $movie->lenght ?></span>
+        <span>Duracao: <?= $movie->length ?></span>
         <span class="pipe"></span>
         <span><?= $movie->category ?></span>
         <span class="pipe"></span>

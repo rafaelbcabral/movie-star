@@ -2,6 +2,7 @@
 
   require_once("models/Review.php");
   require_once("models/Message.php");
+
   require_once("dao/UserDAO.php");
 
   class ReviewDao implements ReviewDAOInterface {
@@ -64,7 +65,7 @@
 
         $reviewsData = $stmt->fetchAll();
 
-        $userDao = new UserDAO($this->conn, $this->url);
+        $userDao = new UserDao($this->conn, $this->url);
 
         foreach($reviewsData as $review) {
 
@@ -101,7 +102,7 @@
 
     }
 
-    public function getRating($id) {
+    public function getRatings($id) {
 
       $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id");
 

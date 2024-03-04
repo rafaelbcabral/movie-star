@@ -27,7 +27,7 @@ $userData = $userDao->verifyToken(true);
       </div>
       <div class="form-group">
         <label for="title">Duracao:</label>
-        <input type="text" class="form-control" id="lenght" name="lenght" placeholder="Digite a duracao do filme.">
+        <input type="text" class="form-control" id="length" name="length" placeholder="Digite a duracao do filme.">
       </div>
       <div class="form-group">
         <label for="category">Categoria: </label>
