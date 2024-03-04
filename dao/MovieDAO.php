@@ -31,6 +31,10 @@
       $movie->length = $data["length"];
       $movie->users_id = $data["users_id"];
 
+     if (strpos($movie->trailer, 'watch?v=') !== false) {
+        $movie->trailer = str_replace('watch?v=', 'embed/', $movie->trailer);
+    } 
+
       // Recebe as ratings do filme
       $reviewDao = new ReviewDao($this->conn, $this->url);
 

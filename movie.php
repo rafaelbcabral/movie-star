@@ -66,7 +66,8 @@
         <span class="pipe"></span>
         <span><i class="fas fa-star"></i> <?= $movie->rating ?></span>
       </p>
-      <iframe src="<?= $movie->trailer ?>" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="<?= $movie->trailer ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
       <p><?= $movie->description ?></p>
     </div>
     <div class="col-md-4">

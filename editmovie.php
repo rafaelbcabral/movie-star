@@ -67,7 +67,7 @@
                 <option value="Drama" <?= $movie->category === "Drama" ? "selected" : "" ?>>Drama</option>
                 <option value="Comédia" <?= $movie->category === "Comédia" ? "selected" : "" ?>>Comédia</option>
                 <option value="Fantasia / Ficção" <?= $movie->category === "Fantasia / Ficção" ? "selected" : "" ?>>Fantasia / Ficção</option>
-                <option value="Romance" <?= $movie->category === "Romance" ? "selected" : "" ?>>Romance</option>
+                <option value="Terror" <?= $movie->category === "Terror" ? "selected" : "" ?>>Terror</option>
               </select>
             </div>
             <div class="form-group">
