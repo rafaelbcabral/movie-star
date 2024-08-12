@@ -1,5 +1,5 @@
 <h1 align="center">
-<p ><b> MOVIE STAR 🍿💫</b> <br> <p style="font-size: 15px">Seu site de catalogo de filmes e séries.</p></p>
+<p ><b> MOVIE STAR 🍿💫</b> <br> <p style="font-size: 15px">Site de catálogo de filmes e séries.</p></p>
 
 <img src="img/site.jpg">
 <br>
